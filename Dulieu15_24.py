@@ -106,6 +106,17 @@ with tab2:
     plt.ylabel("Luot dung (Trieu luot)")
     plt.title("So platform truy cap vao cac kenh truyen hinh")
     st.pyplot(fig1)
+with tab3:
+     fig =plt.figure(figsize=(10, 9), dpi=200)
+    plt.plot(de['Date'], de['Total Raw'], label='Desktop')
+    plt.plot(dr['Date'].drop_duplicates(keep='first'),dr.groupby('Date')['Total Raw'].sum(),label='Mobile')
+    plt.plot(dt['Date'].drop_duplicates(keep='first'), dt.groupby('Date')['Total Raw'].sum(), label='Tablet')
+    plt.plot(dy['Date'].drop_duplicates(keep='first'),dy.groupby('Date')['Total Raw'].sum(),label='Smart TV')
+    plt.legend(loc='upper right')
+    plt.xlabel('Ngay')
+    plt.ylabel('Luot Su dung')
+    st.pyplot(fig)
+
 # __________________________________________________________________________________________________
 
 # Thong tin tung ngay
