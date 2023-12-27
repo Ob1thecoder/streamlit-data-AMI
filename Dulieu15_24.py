@@ -99,6 +99,8 @@ with tab2:
     plt.plot(ios['Date'].drop_duplicates(keep='first'), ios.groupby('Date')['Total Raw'].sum(), label='IOS')
     plt.plot(andr['Date'].drop_duplicates(keep='first'), andr.groupby('Date')['Total Raw'].sum(), label='ANDROID')
     plt.plot(web['Date'].drop_duplicates(keep='first'), web.groupby('Date')['Total Raw'].sum(), label='WEB')
+    plt.plot(dy['Date'].drop_duplicates(keep='first'), dy.groupby('Date')['Total Raw'].sum(), label='Smart TV')
+
     plt.legend(loc='upper right')
     plt.xlabel("Ngay")
     plt.ylabel("Luot dung (Trieu luot)")
